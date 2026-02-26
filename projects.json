@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Projekt 1",
+    "beschreibung": "Meine erste Projektidee",
+    "link": "#"
+  },
+  {
+    "name": "Projekt 2",
+    "beschreibung": "Noch eine coole Idee",
+    "link": "#"
+  },
+  {
+    "name": "Projekt 3",
+    "beschreibung": "Noch ein spannendes Projekt",
+    "link": "#"
+  }
+]
