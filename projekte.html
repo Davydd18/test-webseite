@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Projekte</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; color:#333; }
+        header { background:#111; color:white; padding:40px; text-align:center; }
+        nav { background:#222; padding:15px; text-align:center; }
+        nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+        nav a:hover { color:#00bcd4; }
+        .card { background:white; padding:25px; margin:20px auto; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.08); max-width:800px; }
+        h1,h2 { margin-top:0; }
+        .btn { display:inline-block; padding:10px 20px; background:#00bcd4; color:white; border-radius:6px; text-decoration:none; margin-top:10px; }
+        .btn:hover { background:#0097a7; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Meine Projekte</h1>
+    <p>Alle meine Ideen an einem Ort 🚀</p>
+</header>
+
+<nav>
+    <a href="index.html">Start</a>
+    <a href="projekte.html">Projekte</a>
+    <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="projects">
+    <!-- Projekte werden hier per JavaScript geladen -->
+</section>
+
+<script>
+fetch('projects.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('projects');
+    data.forEach(projekt => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `
+        <h2>${projekt.name}</h2>
+        <p>${projekt.beschreibung}</p>
+        <a class="btn" href="${projekt.link}">Mehr erfahren</a>
+      `;
+      container.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>
